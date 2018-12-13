@@ -1,4 +1,4 @@
-package org.academiadecodigo.hackathon.models.persistence;
+package org.academiadecodigo.hackathon.models.dao;
 
 import org.academiadecodigo.hackathon.models.Review;
 
