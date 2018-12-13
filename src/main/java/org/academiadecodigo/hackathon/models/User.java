@@ -8,7 +8,7 @@ import java.util.Map;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User extends AbrastractModel{
 
     //Attributes
     private String username;

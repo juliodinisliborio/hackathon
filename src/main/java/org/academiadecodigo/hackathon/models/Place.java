@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "place")
-public class Place {
+public class Place extends AbrastractModel{
 
     //Attributes
     private String mapPathForAPI;

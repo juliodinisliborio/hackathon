@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "review")
-public class Review {
+public class Review extends AbrastractModel{
 
     //Attributes
     private Integer levelOfCameras;
