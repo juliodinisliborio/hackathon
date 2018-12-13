@@ -1,9 +1,11 @@
 package org.academiadecodigo.hackathon.services;
 
 import org.academiadecodigo.hackathon.models.Friend;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class FriendServiceImp implements FriendService {
 
     @Override

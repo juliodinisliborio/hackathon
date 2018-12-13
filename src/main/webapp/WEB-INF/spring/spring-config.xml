@@ -13,5 +13,6 @@
     <context:component-scan base-package="org.academiadecodigo.hackathon"/>
 
     <import resource="presentation.xml"/>
+    <import resource="persistence.xml"/>
 
 </beans>

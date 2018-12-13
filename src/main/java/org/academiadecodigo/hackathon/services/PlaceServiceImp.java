@@ -3,9 +3,11 @@ package org.academiadecodigo.hackathon.services;
 import org.academiadecodigo.hackathon.models.Place;
 import org.academiadecodigo.hackathon.models.Review;
 import org.academiadecodigo.hackathon.models.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PlaceServiceImp implements PlaceService {
 
 

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-       profile="prod">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- Enable support for JPA annotations -->
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
@@ -11,13 +10,13 @@
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://${prod.jdbc.host}/${prod.jdbc.database}?useSSL=false"/>
-        <property name="user" value="${prod.jdbc.username}"/>
-        <property name="password" value="${prod.jdbc.password}"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:8080/powrangers"/>
+        <property name="user" value="root"/>
+        <property name="password" value=""/>
 
         <!-- c3p0 database connection pool management properties -->
-        <property name="minPoolSize" value="${pool.min}"/>
-        <property name="maxPoolSize" value="${pool.max}"/>
+        <property name="minPoolSize" value="1"/>
+        <property name="maxPoolSize" value="10"/>
         <property name="acquireIncrement" value="1"/>
         <property name="maxStatements" value="0"/>
 
@@ -38,10 +37,10 @@
         </property>
         <property name="jpaProperties">
             <map>
-                <entry key="hibernate.show_sql" value="${prod.debug}" />
+                <entry key="hibernate.show_sql" value="false" />
                 <entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
                 <!-- Run as add once to initialize the schema -->
-                <entry key="hibernate.hbm2ddl.auto" value="create"/>
+               <!-- <entry key="hibernate.hbm2ddl.auto" value="create"/> -->
             </map>
         </property>
     </bean>

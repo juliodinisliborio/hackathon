@@ -2,9 +2,11 @@ package org.academiadecodigo.hackathon.services;
 
 import org.academiadecodigo.hackathon.models.Achievement;
 import org.academiadecodigo.hackathon.models.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class AchievementServiceImp implements AchievementService {
 
     @Override

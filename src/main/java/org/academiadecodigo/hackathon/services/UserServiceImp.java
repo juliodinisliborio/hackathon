@@ -1,9 +1,11 @@
 package org.academiadecodigo.hackathon.services;
 
 import org.academiadecodigo.hackathon.models.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class UserServiceImp implements UserService {
 
 
