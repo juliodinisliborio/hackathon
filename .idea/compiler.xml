@@ -9,5 +9,8 @@
         <module name="PowRangers" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="PowRangers" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
