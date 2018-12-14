@@ -11,4 +11,9 @@ public class JpaAchievementDao extends JpaAbstractDAO<Achievement> implements Ac
     public JpaAchievementDao() {
         super(Achievement.class);
     }
+
+    @Override
+    public Achievement getById(Integer achievementId) {
+        return null;
+    }
 }

@@ -1,6 +1,8 @@
 package org.academiadecodigo.hackathon.services;
 
 import org.academiadecodigo.hackathon.models.User;
+import org.academiadecodigo.hackathon.models.dao.UserDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,34 +10,40 @@ import java.util.List;
 @Service
 public class UserServiceImp implements UserService {
 
+    private UserDAO userDAO;
 
     @Override
     public List<User> getAllUsers() {
-        return null;
+        return userDAO.getAll();
     }
 
     @Override
-    public User getUserbyId(Integer userId) {
-        return null;
+    public User getUserbyId(String username) {
+        return userDAO.findbyUsername(username);
     }
 
     @Override
-    public Integer getUserPoints(Integer userId) {
-        return null;
+    public Integer getUserPoints(String username) {
+        return userDAO.findbyUsername(username).getNumberOfStealingAttempts();
     }
 
     @Override
     public User addNewUser(User user) {
-        return null;
+        return userDAO.add(user);
     }
 
     @Override
-    public Boolean removeUser(User user) {
-        return null;
+    public void removeUser(String username) {
+        userDAO.remove(userDAO.findbyUsername(username));
     }
 
     @Override
     public User updateUser(User user) {
-        return null;
+        return userDAO.update(user);
+    }
+
+    @Autowired
+    public void setUserDAO(UserDAO userDAO) {
+        this.userDAO = userDAO;
     }
 }

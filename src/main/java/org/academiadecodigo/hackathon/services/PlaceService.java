@@ -5,10 +5,11 @@ import org.academiadecodigo.hackathon.models.Review;
 import org.academiadecodigo.hackathon.models.User;
 
 import java.util.List;
+import java.util.Set;
 
 public interface PlaceService {
 
-    List<Place> getUserPlaces(Integer userId);
+    Set<Place> getUserPlaces(String username);
 
     List<Place> getAllPlaces();
 
@@ -16,8 +17,8 @@ public interface PlaceService {
 
     Place addPlace(Place place);
 
-    List<Review> getPlaceReviews(Place place);
+    List<Review> getPlaceReviews(Integer placeId);
 
-    Boolean removeUserPlace(Place place, User user);
+    void removeUserPlace(Integer placeId, String username);
 
 }

@@ -10,4 +10,9 @@ public class JpaPlaceDAO extends JpaAbstractDAO<Place> implements PlaceDAO {
     public JpaPlaceDAO() {
         super(Place.class);
     }
+
+    @Override
+    public Place getById(Integer placeId) {
+        return null;
+    }
 }

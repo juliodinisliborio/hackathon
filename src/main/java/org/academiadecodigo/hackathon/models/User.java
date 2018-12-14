@@ -39,8 +39,9 @@ public class User extends AbrastractModel{
     private Map<Place, Boolean> places = new HashMap<>();
 
     //Methods
-    public void addFriend(Friend newFriend){
+    public Friend addFriend(Friend newFriend){
         friends.add(newFriend);
+        return newFriend;
     }
 
     public void addAchievement(Achievement newAchievement){

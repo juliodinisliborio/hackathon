@@ -6,14 +6,14 @@ import java.util.List;
 
 public interface FriendService {
 
-    List<Friend> getUserFriendsList(Integer userId);
+    List<Friend> getUserFriendsList(String username);
 
-    Friend getFriend(Integer userId, Integer friendsId);
+    Friend getFriend(String username, Integer friendsId);
 
-    Friend addFriendById(Integer friendId);
+    Friend addFriendById(String username, Friend friend);
 
-    Boolean removeFriend(Friend friend);
+    void removeFriend(Integer friendId);
 
-    Integer getFriendPoints(Integer userId, Integer friendId);
+    Integer getFriendStealingAttempts(String username, Integer friendId);
 
 }

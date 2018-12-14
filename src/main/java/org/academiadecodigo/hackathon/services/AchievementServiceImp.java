@@ -1,7 +1,10 @@
 package org.academiadecodigo.hackathon.services;
 
 import org.academiadecodigo.hackathon.models.Achievement;
-import org.academiadecodigo.hackathon.models.User;
+import org.academiadecodigo.hackathon.models.dao.AchievementDAO;
+import org.academiadecodigo.hackathon.models.dao.FriendDAO;
+import org.academiadecodigo.hackathon.models.dao.UserDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,23 +12,42 @@ import java.util.List;
 @Service
 public class AchievementServiceImp implements AchievementService {
 
+    private AchievementDAO achievementDAO;
+    private UserDAO userDAO;
+    private FriendDAO friendDAO;
+
     @Override
-    public List<Achievement> getUserAchievements(User user) {
-        return null;
+    public List<Achievement> getUserAchievements(String username) {
+        return userDAO.findbyUsername(username).getAchievements();
     }
 
     @Override
     public List<Achievement> getFriendAchievements(Integer friendId) {
-        return null;
+        return friendDAO.getById(friendId).getAchievements();
     }
 
     @Override
     public Achievement getAchievementById(Integer achievementId) {
-        return null;
+        return achievementDAO.getById(achievementId);
     }
 
     @Override
-    public Boolean getAchivementStatus(Integer achievementId, User user) {
-        return null;
+    public Boolean getAchievementStatus(Achievement achievement, String username) {
+        return userDAO.findbyUsername(username).getAchievements().contains(achievement);
+    }
+
+    @Autowired
+    public void setAchievementDAO(AchievementDAO achievementDAO) {
+        this.achievementDAO = achievementDAO;
+    }
+
+    @Autowired
+    public void setUserDAO(UserDAO userDAO) {
+        this.userDAO = userDAO;
+    }
+
+    @Autowired
+    public void setFriendDAO(FriendDAO friendDAO) {
+        this.friendDAO = friendDAO;
     }
 }

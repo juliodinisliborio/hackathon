@@ -8,13 +8,13 @@ public interface UserService {
 
     List<User> getAllUsers();
 
-    User getUserbyId(Integer userId);
+    User getUserbyId(String username);
 
-    Integer getUserPoints(Integer userId);
+    Integer getUserPoints(String username);
 
     User addNewUser(User user);
 
-    Boolean removeUser(User user);
+    void removeUser(String username);
 
     User updateUser(User user);
 }
