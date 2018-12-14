@@ -20,14 +20,15 @@ public class Place extends AbstractModel {
     )
     private List<Review> reviews;
 
-    @ManyToMany(
-            mappedBy = "places"
-    )
-    private List<User> users = new ArrayList<>();
+    @ManyToMany
+    private List<User> user = new ArrayList<>();
 
     //Methods
-    public void addReview (Review newReview){
+    public Review addReview (Review newReview){
+
         reviews.add(newReview);
+
+        return newReview;
     }
 
     //Getters and Setters

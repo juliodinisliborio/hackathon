@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <thymeleaf th:replace="header :: header"/>
 </head>
 <body>
-<h1>huehuehuehue</h1>
+<thymeleaf th:replace="navbar :: navbar"/>
+
+<div class="container">
+    <h1>This is a Test Page</h1>
+
+
+</div>
+
 </body>
 </html>

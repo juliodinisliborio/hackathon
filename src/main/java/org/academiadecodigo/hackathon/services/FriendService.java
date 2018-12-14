@@ -10,10 +10,10 @@ public interface FriendService {
 
     Friend getFriend(Integer userId, Integer friendsId);
 
-    Friend addFriendById(Integer friendId);
+    Friend addFriendById(Integer userId, Friend friend);
 
-    Boolean removeFriend(Friend friend);
+    void removeFriend(Integer userId, Integer friendId);
 
-    Integer getFriendPoints(Integer userId, Integer friendId);
+    Integer getFriendStealingAttempts(Integer userId, Integer friendId);
 
 }

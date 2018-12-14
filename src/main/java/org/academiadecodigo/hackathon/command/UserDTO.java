@@ -1,5 +1,8 @@
 package org.academiadecodigo.hackathon.command;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class UserDTO {
 
     private Integer id;

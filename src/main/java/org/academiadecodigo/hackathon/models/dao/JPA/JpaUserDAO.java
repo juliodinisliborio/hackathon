@@ -16,4 +16,9 @@ public class JpaUserDAO extends JpaAbstractDAO<User> implements UserDAO {
     public User findbyUsername(String username) {
         return null;
     }
+
+    @Override
+    public User getbyId(Integer userId) {
+        return null;
+    }
 }

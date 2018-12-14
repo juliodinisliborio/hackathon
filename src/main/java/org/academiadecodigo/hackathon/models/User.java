@@ -23,32 +23,32 @@ public class User extends AbstractModel {
     private List<Friend> friends = new ArrayList<>();
 
     @ManyToMany(
+            mappedBy = "user",
 
-            mappedBy = "users",
-
-            // fetch achievements from database together with user
+            // fetch achievement from database together with user
             fetch = FetchType.EAGER
     )
-    private List<Achievement> achievements = new ArrayList<>();
+    private List<Achievement> achievement = new ArrayList<>();
 
     @ManyToMany(
             // user customer foreign key on account table to establish
             // the many-to-one relationship instead of a join table
-            mappedBy = "users"
+            mappedBy = "user"
     )
-    private Map<Place, Boolean> places = new HashMap<>();
+    private List<Place> place = new ArrayList<>();
 
     //Methods
-    public void addFriend(Friend newFriend){
+    public Friend addFriend(Friend newFriend){
         friends.add(newFriend);
+        return newFriend;
     }
 
     public void addAchievement(Achievement newAchievement){
-        achievements.add(newAchievement);
+        achievement.add(newAchievement);
     }
 
     public void addNewPlace(Place newPlace){
-        places.put(newPlace, false);
+        place.add(newPlace);
     }
 
     public void incrementAttempts(){
@@ -64,12 +64,12 @@ public class User extends AbstractModel {
         this.friends = friends;
     }
 
-    public List<Achievement> getAchievements() {
-        return achievements;
+    public List<Achievement> getAchievement() {
+        return achievement;
     }
 
-    public void setAchievements(List<Achievement> achievements) {
-        this.achievements = achievements;
+    public void setAchievement(List<Achievement> achievement) {
+        this.achievement = achievement;
     }
 
     public String getUsername() {
@@ -112,11 +112,11 @@ public class User extends AbstractModel {
         this.numberOfStealingAttempts = numberOfStealingAttempts;
     }
 
-    public Map<Place, Boolean> getPlaces() {
-        return places;
+    public List<Place> getPlace() {
+        return place;
     }
 
-    public void setPlaces(Map<Place, Boolean> places) {
-        this.places = places;
+    public void setPlace(List<Place> place) {
+        this.place = place;
     }
 }

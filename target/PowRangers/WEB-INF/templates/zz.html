@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <thymeleaf th:replace="header :: header"/>
+</head>
+<body>
+<thymeleaf th:replace="navbar :: navbar"/>
+<form class="form-horizontal" th:object="${user}" th:action="@{'/x'}" method="post">
+
+    <input type="text" class="form-control" th:field="*{username}"/>
+    <input type="text" class="form-control" th:field="*{id}"/>
+    <input type="text" class="form-control" th:field="*{password}"/>
+    <button type="submit" class="btn btn-primary" name="action" value="save">Submit</button>
+
+</form>
+
+</body>
+</html>

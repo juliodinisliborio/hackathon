@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <thymeleaf th:replace="header :: header"/>
+</head>
+<body>
+<thymeleaf th:replace="navbar :: navbar"/>
+
+<div class="container">
+    <h1>This is a Login Page</h1>
+    <table>
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.id}"></td>
+            <td th:text="${customer.firstName}"></td>
+            <td th:text="${customer.lastName}"></td>
+            <td th:text="${customer.email}"></td>
+            <td th:text="${customer.phone}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

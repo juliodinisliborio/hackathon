@@ -1,5 +1,6 @@
 package org.academiadecodigo.hackathon.services;
 
+import org.academiadecodigo.hackathon.models.Place;
 import org.academiadecodigo.hackathon.models.User;
 
 import java.util.List;
@@ -8,13 +9,15 @@ public interface UserService {
 
     List<User> getAllUsers();
 
-    User getUserbyId(Integer userId);
+    List<Place> getUserPlaces(Integer id);
 
-    Integer getUserPoints(Integer userId);
+    User getUserbyId(Integer id);
+
+    Integer getUserPoints(Integer id);
 
     User addNewUser(User user);
 
-    Boolean removeUser(User user);
+    void removeUser(Integer id);
 
-    User updateUser(User user);
+    User updateUser(Integer id, User user);
 }

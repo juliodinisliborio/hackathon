@@ -7,11 +7,9 @@ import java.util.List;
 
 public interface AchievementService {
 
-    List<Achievement> getUserAchievements(User user);
-
-    List<Achievement> getFriendAchievements(Integer friendId);
+    List<Achievement> getUserAchievements(Integer id);
 
     Achievement getAchievementById(Integer achievementId);
 
-    Boolean getAchivementStatus(Integer achievementId, User user);
+    Boolean getAchievementStatus(Achievement achievement, Integer userId);
 }

@@ -10,4 +10,9 @@ public class JpaFriendDAO extends JpaAbstractDAO<Friend> implements FriendDAO {
     public JpaFriendDAO() {
         super(Friend.class);
     }
+
+    @Override
+    public Friend getById(Integer friendId) {
+        return null;
+    }
 }

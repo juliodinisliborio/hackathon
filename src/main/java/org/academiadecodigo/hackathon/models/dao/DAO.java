@@ -8,8 +8,8 @@ public interface DAO <T> {
 
     List<T> getAll();
 
-    T update(T t);
+    T update(Integer id);
 
-    void remove(T t);
+    void remove(Integer id);
 
 }

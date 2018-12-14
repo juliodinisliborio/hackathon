@@ -1,40 +1,65 @@
 package org.academiadecodigo.hackathon.services.mock;
 
+import org.academiadecodigo.hackathon.models.Achievement;
+import org.academiadecodigo.hackathon.models.Place;
 import org.academiadecodigo.hackathon.models.User;
+import org.academiadecodigo.hackathon.models.dao.UserDAO;
 import org.academiadecodigo.hackathon.services.UserService;
+import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
-
+@Service
 public class MockUserService extends AbstractMockService<User> implements UserService {
+
 
     @Override
     public List<User> getAllUsers() {
-        return null;
+
+        List<User> list = new ArrayList<>();
+
+        list.addAll(modelMap.values());
+
+        return list;
     }
 
     @Override
-    public User getUserbyId(Integer userId) {
-        return null;
+    public List<Place> getUserPlaces(Integer id) {
+        return getUserbyId(id).getPlace();
     }
 
     @Override
-    public Integer getUserPoints(Integer userId) {
-        return null;
+    public User getUserbyId(Integer id) {
+        return modelMap.get(id);
+    }
+
+    @Override
+    public Integer getUserPoints(Integer id) {
+        Integer holder = 0; // :)
+
+        for (Achievement achievement: modelMap.get(id).getAchievement()) {
+            holder += achievement.getPoints();
+        }
+
+        return holder;
     }
 
     @Override
     public User addNewUser(User user) {
-        return null;
+        return modelMap.put(user.getId(), user);
     }
 
     @Override
-    public Boolean removeUser(User user) {
-        return null;
+    public void removeUser(Integer id) {
+        modelMap.remove(id);
     }
 
     @Override
-    public User updateUser(User user) {
-        return null;
+    public User updateUser(Integer id, User user) {
+
+        return modelMap.put(id, user);
+
     }
+
 }

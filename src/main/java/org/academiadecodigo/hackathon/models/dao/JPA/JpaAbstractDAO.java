@@ -10,13 +10,14 @@ public abstract class JpaAbstractDAO<T> implements DAO<T> {
 
     protected Class<T> modelType;
 
-    @PersistenceContext
+
     protected EntityManager entityManager;
 
     public JpaAbstractDAO(Class<T> modelType){
         this.modelType = modelType;
     }
 
+    @PersistenceContext
     public void setEm(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
@@ -32,12 +33,12 @@ public abstract class JpaAbstractDAO<T> implements DAO<T> {
     }
 
     @Override
-    public T update(T o) {
+    public T update(Integer id) {
         return null;
     }
 
     @Override
-    public void remove(T o) {
+    public void remove(Integer id) {
 
     }
 }
