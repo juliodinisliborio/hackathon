@@ -1,16 +1,35 @@
 <thymeleaf xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
            th:fragment="navbar" th:remove="tag">
+    <script>
+        window.onscroll = function() {myFunction()};
 
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
 
-<nav class="navbar navbar-static-top" style="background-color: black; text-decoration-color: black">
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+<nav id="navbar" class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="http://academiadecodigo.org" target="_blank">
                 <img alt="Brand" src="http://lisboa.academiadecodigo.org/logo.png" height="60px">
             </a>
         </div>
+        <ul class="nav navbar-nav text-center">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Places</a></li>
+            <li><a href="#">Achievements</a></li>
+        </ul>
         <div class="nav-item pull-right">
-            <p style="font-size: 40px;">PowRangers</p>
+            <p style="font-size: 40px;">Login</p>
         </div>
     </div>
 </nav>

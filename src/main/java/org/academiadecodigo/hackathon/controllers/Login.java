@@ -8,12 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Login {
 
     @RequestMapping("")
-    String login(){
+    String login() {
         return "login";
     }
 
     @RequestMapping("profile")
-    String profile_(){
+    String profile_() {
         return "profile";
+    }
+
+    @RequestMapping("place")
+    String place() {
+        return "place";
     }
 }
