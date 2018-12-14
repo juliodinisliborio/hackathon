@@ -20,10 +20,8 @@ public class Place extends AbrastractModel{
     )
     private List<Review> reviews;
 
-    @ManyToMany(
-            mappedBy = "place"
-    )
-    private List<User> users = new ArrayList<>();
+    @ManyToMany
+    private List<User> user = new ArrayList<>();
 
     //Methods
     public void addReview (Review newReview){

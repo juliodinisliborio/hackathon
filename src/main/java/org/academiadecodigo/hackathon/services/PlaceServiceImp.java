@@ -18,8 +18,8 @@ public class PlaceServiceImp implements PlaceService {
     private UserDAO userDAO;
 
     @Override
-    public Set<Place> getUserPlaces(String username) {
-        return userDAO.findbyUsername(username).getPlaces().keySet();
+    public List<Place> getUserPlaces(String username) {
+        return userDAO.findbyUsername(username).getPlace();
     }
 
     @Override
@@ -45,7 +45,7 @@ public class PlaceServiceImp implements PlaceService {
     @Override
     public void removeUserPlace(Integer placeId, String username) {
         User user = userDAO.findbyUsername(username);
-        user.getPlaces().remove(placeDAO.getById(placeId));
+        user.getPlace().remove(placeDAO.getById(placeId));
         userDAO.update(user);
     }
 

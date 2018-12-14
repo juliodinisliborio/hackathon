@@ -18,12 +18,12 @@ public class AchievementServiceImp implements AchievementService {
 
     @Override
     public List<Achievement> getUserAchievements(String username) {
-        return userDAO.findbyUsername(username).getAchievements();
+        return userDAO.findbyUsername(username).getAchievement();
     }
 
     @Override
     public List<Achievement> getFriendAchievements(Integer friendId) {
-        return friendDAO.getById(friendId).getAchievements();
+        return userDAO.getbyId(friendDAO.getById(friendId).getUserId()).getAchievement();
     }
 
     @Override
@@ -33,7 +33,7 @@ public class AchievementServiceImp implements AchievementService {
 
     @Override
     public Boolean getAchievementStatus(Achievement achievement, String username) {
-        return userDAO.findbyUsername(username).getAchievements().contains(achievement);
+        return userDAO.findbyUsername(username).getAchievement().contains(achievement);
     }
 
     @Autowired

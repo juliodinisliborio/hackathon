@@ -23,6 +23,7 @@
 /Users/codecadet/Documents/DEV/PowRangers/src/main/java/org/academiadecodigo/hackathon/models/dao/JPA/JpaAchievementDao.java
 /Users/codecadet/Documents/DEV/PowRangers/src/main/java/org/academiadecodigo/hackathon/models/User.java
 /Users/codecadet/Documents/DEV/PowRangers/src/main/java/org/academiadecodigo/hackathon/models/dao/FriendDAO.java
+/Users/codecadet/Documents/DEV/PowRangers/src/main/java/org/academiadecodigo/hackathon/controllers/Login.java
 /Users/codecadet/Documents/DEV/PowRangers/src/main/java/org/academiadecodigo/hackathon/services/PlaceServiceImp.java
 /Users/codecadet/Documents/DEV/PowRangers/src/main/java/org/academiadecodigo/hackathon/models/dao/AchievementDAO.java
 /Users/codecadet/Documents/DEV/PowRangers/src/main/java/org/academiadecodigo/hackathon/models/dao/DAO.java

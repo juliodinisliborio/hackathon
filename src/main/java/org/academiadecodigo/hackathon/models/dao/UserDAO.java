@@ -5,4 +5,6 @@ import org.academiadecodigo.hackathon.models.User;
 public interface UserDAO extends DAO<User> {
 
     User findbyUsername(String username);
+
+    User getbyId(Integer userId);
 }

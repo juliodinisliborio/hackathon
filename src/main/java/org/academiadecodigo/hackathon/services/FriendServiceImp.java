@@ -40,7 +40,7 @@ public class FriendServiceImp implements FriendService {
 
     @Override
     public Integer getFriendStealingAttempts(String username, Integer friendId) {
-        return userDAO.findbyUsername(username).getFriends().get(friendId).getNumberOfStealingAttemps();
+        return userDAO.findbyUsername(username).getFriends().get(friendId).getNumberOfStealingAttempts();
     }
 
     @Autowired

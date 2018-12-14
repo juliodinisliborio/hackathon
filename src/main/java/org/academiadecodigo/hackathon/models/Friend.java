@@ -11,36 +11,21 @@ public class Friend extends AbrastractModel{
     //Attributes
     private String displayName;
     private String avatarPath;
-    private List<Achievement> achievements;
-    private Integer numberOfStealingAttemps;
-    private List<Place> successfulPlaces;
+    private Integer userId;
+
+    private Integer numberOfStealingAttempts;
+
 
     @ManyToOne
     private User user;
 
     //Getters and Setters
-    public Integer getNumberOfStealingAttemps() {
-        return numberOfStealingAttemps;
+    public Integer getNumberOfStealingAttempts() {
+        return numberOfStealingAttempts;
     }
 
-    public void setNumberOfStealingAttemps(Integer numberOfStealingAttemps) {
-        this.numberOfStealingAttemps = numberOfStealingAttemps;
-    }
-
-    public List<Place> getSuccessfulPlaces() {
-        return successfulPlaces;
-    }
-
-    public void setSuccessfulPlaces(List<Place> successfulPlaces) {
-        this.successfulPlaces = successfulPlaces;
-    }
-
-    public List<Achievement> getAchievements() {
-        return achievements;
-    }
-
-    public void setAchievements(List<Achievement> achievements) {
-        this.achievements = achievements;
+    public void setNumberOfStealingAttempts(Integer numberOfStealingAttempts) {
+        this.numberOfStealingAttempts = numberOfStealingAttempts;
     }
 
     public String getDisplayName() {
@@ -59,5 +44,12 @@ public class Friend extends AbrastractModel{
         this.avatarPath = avatarPath;
     }
 
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 }
 

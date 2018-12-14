@@ -10,13 +10,14 @@ public abstract class JpaAbstractDAO<T> implements DAO<T> {
 
     protected Class<T> modelType;
 
-    @PersistenceContext
+
     protected EntityManager entityManager;
 
     public JpaAbstractDAO(Class<T> modelType){
         this.modelType = modelType;
     }
 
+    @PersistenceContext
     public void setEm(EntityManager entityManager) {
         this.entityManager = entityManager;
     }

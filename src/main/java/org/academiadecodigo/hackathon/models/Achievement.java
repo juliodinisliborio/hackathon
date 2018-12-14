@@ -13,11 +13,9 @@ public class Achievement extends AbrastractModel{
     private String description;
 
     @ManyToMany(
-            mappedBy = "achievement",
-
             fetch = FetchType.EAGER
     )
-    private List<User> users = new ArrayList<>();
+    private List<User> user = new ArrayList<>();
 
     public String getImgPath() {
         return imgPath;

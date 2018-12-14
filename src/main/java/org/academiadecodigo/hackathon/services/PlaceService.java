@@ -9,7 +9,7 @@ import java.util.Set;
 
 public interface PlaceService {
 
-    Set<Place> getUserPlaces(String username);
+    List<Place> getUserPlaces(String username);
 
     List<Place> getAllPlaces();
 

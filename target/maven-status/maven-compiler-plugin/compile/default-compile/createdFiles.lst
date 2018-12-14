@@ -9,6 +9,7 @@ org/academiadecodigo/hackathon/models/dao/PlaceDAO.class
 org/academiadecodigo/hackathon/services/AchievementService.class
 org/academiadecodigo/hackathon/services/AuthenticationService.class
 org/academiadecodigo/hackathon/models/dao/DAO.class
+org/academiadecodigo/hackathon/controllers/Login.class
 org/academiadecodigo/hackathon/services/AuthenticationServiceImp.class
 org/academiadecodigo/hackathon/services/ReviewService.class
 org/academiadecodigo/hackathon/models/AbrastractModel.class
