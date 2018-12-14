@@ -1,6 +1,7 @@
 package org.academiadecodigo.hackathon.services;
 
 import org.academiadecodigo.hackathon.models.Friend;
+import org.academiadecodigo.hackathon.models.User;
 import org.academiadecodigo.hackathon.models.dao.FriendDAO;
 import org.academiadecodigo.hackathon.models.dao.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,10 @@ public class FriendServiceImp implements FriendService {
 
     @Override
     public Friend addFriendById(String username, Friend friend) {
-        return friendDAO.add(userDAO.findbyUsername(username).addFriend(friend));
+        User user = userDAO.findbyUsername(username);
+        user.addFriend(friend);
+        userDAO.update(user);
+        return user.getFriends().get(user.getFriends().size()-1);
     }
 
     @Override

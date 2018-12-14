@@ -2,6 +2,7 @@ package org.academiadecodigo.hackathon.services;
 
 import org.academiadecodigo.hackathon.models.Place;
 import org.academiadecodigo.hackathon.models.Review;
+import org.academiadecodigo.hackathon.models.User;
 import org.academiadecodigo.hackathon.models.dao.PlaceDAO;
 import org.academiadecodigo.hackathon.models.dao.UserDAO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,9 @@ public class PlaceServiceImp implements PlaceService {
 
     @Override
     public void removeUserPlace(Integer placeId, String username) {
-        userDAO.findbyUsername(username).getPlaces().remove(placeDAO.getById(placeId));
+        User user = userDAO.findbyUsername(username);
+        user.getPlaces().remove(placeDAO.getById(placeId));
+        userDAO.update(user);
     }
 
     @Autowired
