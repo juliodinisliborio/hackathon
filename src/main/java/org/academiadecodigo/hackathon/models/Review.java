@@ -1,16 +1,18 @@
 package org.academiadecodigo.hackathon.models;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "review")
-public class Review extends AbrastractModel{
+public class Review extends AbrastractModel {
 
     //Attributes
     private Integer levelOfCameras;
     private Integer numberOfSecurityGuards;
     private Integer treasureValueOneToFive;
-    private String  thiefComment;
+    private String thiefComment;
 
     @ManyToOne
     private Place place;

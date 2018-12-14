@@ -23,8 +23,7 @@ public class User extends AbrastractModel{
     private List<Friend> friends = new ArrayList<>();
 
     @ManyToMany(
-
-            mappedBy = "users",
+            mappedBy = "user",
 
             // fetch achievements from database together with user
             fetch = FetchType.EAGER
@@ -34,7 +33,7 @@ public class User extends AbrastractModel{
     @ManyToMany(
             // user customer foreign key on account table to establish
             // the many-to-one relationship instead of a join table
-            mappedBy = "users"
+            mappedBy = "user"
     )
     private Map<Place, Boolean> places = new HashMap<>();
 

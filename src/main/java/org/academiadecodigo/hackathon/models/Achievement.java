@@ -13,9 +13,9 @@ public class Achievement extends AbrastractModel{
     private String description;
 
     @ManyToMany(
-            mappedBy = "achievements",
+            mappedBy = "achievement",
 
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     private List<User> users = new ArrayList<>();
 
