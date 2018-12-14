@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "place")
-public class Place extends AbrastractModel{
+public class Place extends AbstractModel {
 
     //Attributes
     private String mapPathForAPI;

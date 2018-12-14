@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "friend")
-public class Friend extends AbrastractModel{
+public class Friend extends AbstractModel {
 
     //Attributes
     private String displayName;

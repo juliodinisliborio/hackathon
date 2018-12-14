@@ -6,7 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "achievement")
-public class Achievement extends AbrastractModel{
+public class Achievement extends AbstractModel {
 
     private String imgPath;
     private String name;
